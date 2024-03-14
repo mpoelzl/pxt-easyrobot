@@ -7,7 +7,7 @@ namespace easyrobot{
     //% motor.fieldOptions.decompileLiterals=1
     //% expandableArgumentMode=toggle
     //% help=motors/motor/run
-    export function runMotor(speed: number, value: number = 0, unit: MoveUnit = MoveUnit.MilliSeconds) {
-        motors.largeCD.run(speed, value, unit);
+    export function runMotor(motor: control.Component, speed: number, value: number = 0, unit: MoveUnit = MoveUnit.MilliSeconds) {
+        (motor as motors.MotorBase).run(speed, value, unit);
     }
 }
