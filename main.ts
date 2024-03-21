@@ -1,13 +1,15 @@
+//% weight=100 color=#DC22E1 block="Easy Robot" blockId="Easy Robot" icon="\uf0e7"
 namespace easyrobot{
-    
-    //% blockId=motorRun block="run %motor at %speed=motorSpeedPicker|\\%||for %value %unit"
-    //% weight=100 blockGap=8
+
+    //% blockId=runEasyMotor block="run %motor at %speed=motorSpeedPicker|\\%||for %value %unit"
+    //% weight=1000 
     //% group="Move"
-    //% motor.fieldEditor="motors"
-    //% motor.fieldOptions.decompileLiterals=1
+    //% motors.fieldEditor="motors"
+    //% motors.fieldOptions.decompileLiterals=1
     //% expandableArgumentMode=toggle
+    //% inlineInputMode=inline
     //% help=motors/motor/run
-    export function runMotor(motor: control.Component, speed: number, value: number = 0, unit: MoveUnit = MoveUnit.MilliSeconds) {
-        (motor as motors.MotorBase).run(speed, value, unit);
+    export function runMotor(motor: motors.Motor, speed: number, value: number = 0, unit: MoveUnit = MoveUnit.MilliSeconds) {
+        motor.run(speed, value, unit);
     }
 }
